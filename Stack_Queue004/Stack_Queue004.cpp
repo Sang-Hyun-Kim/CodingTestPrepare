@@ -44,9 +44,10 @@ int solution(vector<int> priorities, int location) {
 
 int main()
 {
-    solution(vector<int>{1, 1, 9, 1, 1}, 0);
+    solution(vector<int>{1, 1, 9, 1, 1, 1}, 0); // 9 1 1 1 1
     return 0;
 }
+
 // priorities       index 실행 순서
 // [1,5,4,2,3,6,5]  [0,1,2,3,4,5,6]
 // [6,5,1,5,4,2,3]  [5,6,0,1,2,3,4]
