@@ -18,7 +18,6 @@ int main()
 
     long long answer = 0 ; // 답안
 
-    //__int64 tempsum = 0;// 임의의 Stack 순회시 계산될 계산
     int currentBd;
 
     for (int i = 0; i < Bnum; ++i)
