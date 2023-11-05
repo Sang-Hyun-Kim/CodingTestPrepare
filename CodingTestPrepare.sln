@@ -19,6 +19,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HeapCodTest_001", "HeapCodT
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HeapCodTest_002", "HeapCodTest_002\HeapCodTest_002.vcxproj", "{218BBECC-DEE9-44B8-8AE4-71A69EA893AB}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HeapCodTest_003", "HeapCodTest_003\HeapCodTest_003.vcxproj", "{966DEF4D-03B7-463D-80E3-914391AAB3E9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -91,6 +93,14 @@ Global
 		{218BBECC-DEE9-44B8-8AE4-71A69EA893AB}.Release|x64.Build.0 = Release|x64
 		{218BBECC-DEE9-44B8-8AE4-71A69EA893AB}.Release|x86.ActiveCfg = Release|Win32
 		{218BBECC-DEE9-44B8-8AE4-71A69EA893AB}.Release|x86.Build.0 = Release|Win32
+		{966DEF4D-03B7-463D-80E3-914391AAB3E9}.Debug|x64.ActiveCfg = Debug|x64
+		{966DEF4D-03B7-463D-80E3-914391AAB3E9}.Debug|x64.Build.0 = Debug|x64
+		{966DEF4D-03B7-463D-80E3-914391AAB3E9}.Debug|x86.ActiveCfg = Debug|Win32
+		{966DEF4D-03B7-463D-80E3-914391AAB3E9}.Debug|x86.Build.0 = Debug|Win32
+		{966DEF4D-03B7-463D-80E3-914391AAB3E9}.Release|x64.ActiveCfg = Release|x64
+		{966DEF4D-03B7-463D-80E3-914391AAB3E9}.Release|x64.Build.0 = Release|x64
+		{966DEF4D-03B7-463D-80E3-914391AAB3E9}.Release|x86.ActiveCfg = Release|Win32
+		{966DEF4D-03B7-463D-80E3-914391AAB3E9}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
