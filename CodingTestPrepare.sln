@@ -31,6 +31,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DFS_BFS_001", "DFS_BFS_001\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DFS_BFS_002", "DFS_BFS_002\DFS_BFS_002.vcxproj", "{0054A713-6404-475B-8277-B5BF737B3495}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DFS_BFS_003", "DFS_BFS_003\DFS_BFS_003.vcxproj", "{73938D55-6C85-42F8-A90D-8F1BA0F9E4FD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -151,6 +153,14 @@ Global
 		{0054A713-6404-475B-8277-B5BF737B3495}.Release|x64.Build.0 = Release|x64
 		{0054A713-6404-475B-8277-B5BF737B3495}.Release|x86.ActiveCfg = Release|Win32
 		{0054A713-6404-475B-8277-B5BF737B3495}.Release|x86.Build.0 = Release|Win32
+		{73938D55-6C85-42F8-A90D-8F1BA0F9E4FD}.Debug|x64.ActiveCfg = Debug|x64
+		{73938D55-6C85-42F8-A90D-8F1BA0F9E4FD}.Debug|x64.Build.0 = Debug|x64
+		{73938D55-6C85-42F8-A90D-8F1BA0F9E4FD}.Debug|x86.ActiveCfg = Debug|Win32
+		{73938D55-6C85-42F8-A90D-8F1BA0F9E4FD}.Debug|x86.Build.0 = Debug|Win32
+		{73938D55-6C85-42F8-A90D-8F1BA0F9E4FD}.Release|x64.ActiveCfg = Release|x64
+		{73938D55-6C85-42F8-A90D-8F1BA0F9E4FD}.Release|x64.Build.0 = Release|x64
+		{73938D55-6C85-42F8-A90D-8F1BA0F9E4FD}.Release|x86.ActiveCfg = Release|Win32
+		{73938D55-6C85-42F8-A90D-8F1BA0F9E4FD}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
