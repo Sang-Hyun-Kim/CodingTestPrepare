@@ -32,6 +32,7 @@ int main()
     LL answer = Count(Cache, count, pick);
     cout << answer << endl;
 }
+
 // 숫자는 4부터 1000까지다
 
 
