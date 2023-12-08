@@ -1,6 +1,12 @@
-﻿// Graph_001.cpp : 이 파일에는 'main' 함수가 포함됩니다. 거기서 프로그램 실행이 시작되고 종료됩니다.
+﻿// Graph_002.cpp : 이 파일에는 'main' 함수가 포함됩니다. 거기서 프로그램 실행이 시작되고 종료됩니다.
 // 출처: 코딩테스트를 위한 자료구조 알고리즘 with C++
-// 연습 문제: 프림알고리즘 구현 실습 
+// 연습 문제: 다익스트라알고리즘
+
+// 다익스트라 알고리즘(Dijkstra’s algorithm)은 음수 가중치가 없는 그래프에서 동작하는 최단 경로 탐색 알고리즘으로
+//  프림의 MST 알고리즘을 약간 변경한 형태입니다. 다익스트라 알고리즘이 프림 알고리즘과 다른 두 가지 차이점은 다음과 같습니다.
+
+// • 프림 알고리즘은 경계로부터 최소 거리를 정점의 거리 값으로 설정하지만, 다익스트라 알고리즘은 시작 정점으로부터 각 정점까지의 전체 거리를 사용합니다.
+// • 다익스트라 알고리즘은 목적 정점이 나타나면 종료하지만 프림 알고리즘은 모든 정점을 방문해야 종료합니다.
 #include <string>
 #include <vector>
 #include <iostream>
@@ -10,8 +16,7 @@
 #include <limits>
 
 using namespace std;
-// 그래프와 엣지 코드는 Kruskal MST 코드오 ㅏ동일
-// 그래프 자료구조 구현을 위한 에지
+
 template <typename T>
 struct Edge
 {
@@ -91,9 +96,7 @@ ostream& operator<< (ostream& os, const Graph<U>& G)
 
     return os;
 }
-// 프림 알고리즘을 위한 그래프 생성
-// 정점하나는 연결된 정점 번호: 해당 정점과의 거리(가중치) 값을 저장함
-// 그리고 해당 그래프 정보를 반환함
+
 template <typename T>
 auto create_reference_graph()
 {
@@ -108,20 +111,19 @@ auto create_reference_graph()
     edge_map[6] = { {4, 4}, {7, 4}, {8, 1} };
     edge_map[7] = { {3, 3}, {6, 4} };
     edge_map[8] = { {4, 5}, {5, 3}, {6, 1} };
-
     for (auto& i : edge_map)
         for (auto& j : i.second)
             G.add_edge(Edge<T>{ i.first, j.first, j.second });
 
     return G;
 }
-
-//정점에 경계로부터 거리 정보를 저장하기 위해 사용할 Label 구조체를 정의. Label 객체 비교는 거리 값을 이용하도록 비교 연산자를 오버로딩합니다.
+// 이번 구조체 Label은 특정 정점 ID와 시작정점에서 특정 정점 ID 까지의 거리를 distance변수에 저장하는 차이가 있다.
 template <typename T>
 struct Label
 {
     unsigned ID;
     T distance;
+
     // Label 객체 비교는 거리(distance) 값을 이용
     inline bool operator> (const Label<T>& l) const
     {
@@ -130,7 +132,7 @@ struct Label
 };
 
 template <typename T>
-auto prim_MST(const Graph<T>& G, unsigned src)
+auto dijkstra_shortest_path(const Graph<T>& G, unsigned src, unsigned dst)
 {
     // 최소 힙
     priority_queue<Label<T>, vector<Label<T>>, greater<Label<T>>> heap;
@@ -138,44 +140,66 @@ auto prim_MST(const Graph<T>& G, unsigned src)
     // 모든 정점에서 거리 값을 최대로 설정
     vector<T> distance(G.vertices(), numeric_limits<T>::max());
 
-    set<unsigned> visited;     // 방문한 정점
-    vector<unsigned> MST;      // 최소 신장 트리
+    set<unsigned> visited;                     // 방문한 정점
+    vector<unsigned> parent(G.vertices());     // 이동 경로 기억을 위한 벡터
 
-    heap.emplace(Label<T>{src, 0});
+    heap.emplace(Label<T>{src, 0}); // 정정src->src = 0
+    parent[src] = src; // 부모 저장
 
     while (!heap.empty())
     {
         auto current_vertex = heap.top();
         heap.pop();
 
+        // 목적지 정점에 도착했다면 종료
+        if (current_vertex.ID == dst)
+        {
+            cout << current_vertex.ID << "번 정점(목적 정점)에 도착!" << endl;
+            break;
+        }
         // 현재 정점을 이전에 방문하지 않았다면
         if (visited.find(current_vertex.ID) == visited.end())
         {
-            MST.push_back(current_vertex.ID);
+            cout << current_vertex.ID << "번 정점에 안착!" << endl;
 
+            // 현재 정점과 연결된 모든 에지에 대해
             for (auto& e : G.edges(current_vertex.ID))
             {
                 auto neighbor = e.dst;
-                auto new_distance = e.weight;
-
+                auto new_distance = current_vertex.distance + e.weight; // 현재 정점까지의 거리 + 현재 정점과 이어진 이웃 정점간의 가중치
 
                 // 인접한 정점의 거리 값이 새로운 경로에 의한 거리 값보다 크면
                 // 힙에 추가하고, 거리 값을 업데이트함
                 if (new_distance < distance[neighbor])
                 {
-                    heap.emplace(Label<T>{neighbor, new_distance});
+                    heap.emplace(Label<T>{neighbor, new_distance}); // 최소 힙에 이웃 정점의 번호와 시작 정점부터 현재 정점까지의 거리+현재 정점과 이웃정점간의 가중치 값을 더해준다. 
+                    // 최소힙에서 pop된 요소는 방문 여부를 체크하고 방문했었다면 제외, 방문 안했다면 이동 후 해당 정점과 연결된 다른 정점들을 찾아 최소거리를 계산한다.
+                    // 계산 값이 이미 기록된 이웃 정점까지의 거리보다 작다면 해당 거리를 최소 힙에 넣고 부모(최단거리 이전 정점 기록)을 갱신, 거리도 최소 값으로 갱신
+                    
+                    parent[neighbor] = current_vertex.ID;
                     distance[neighbor] = new_distance;
                 }
             }
 
-            visited.insert(current_vertex.ID);
+            visited.insert(current_vertex.ID); // 현재 정점의 번호를 방문 체크
         }
     }
-    // 반환은 정점만 반환하지만 distance에는 최소 거리가 담겨있음
-    // 코드 수정을위해 최소 거리로 연결된 노드도 저장한다면 좋음
-    return MST;
-}
+    
+    // 백트래킹 방식으로 시작 정점부터 목적 정점까지의 경로 구성
+    vector<unsigned> shortest_path;
+    auto current_vertex = dst;
 
+    while (current_vertex != src)
+    {
+        shortest_path.push_back(current_vertex);
+        current_vertex = parent[current_vertex];
+    }
+
+    shortest_path.push_back(src);
+    reverse(shortest_path.begin(), shortest_path.end());
+
+    return shortest_path;
+}
 int main()
 {
     using T = unsigned;
@@ -185,23 +209,10 @@ int main()
     cout << "[입력 그래프]" << endl;
     cout << G << endl;
 
-    auto MST = prim_MST<T>(G, 1);
+    auto shortest_path = dijkstra_shortest_path<T>(G, 1, 6);
 
-    cout << "[최소 신장 트리]" << endl;
-    for (auto v : MST)
-        cout << v << endl;
+    cout << endl << "[1번과 6번 정점 사이의 최단 경로]" << endl;
+    for (auto v : shortest_path)
+        cout << v << " ";
     cout << endl;
 }
-
-// 시간복잡도
-// 이진 최소 힙과 MST저장을 위해 인접 리스트사용=> O(ElogV)
-
-// 크루스칼 알고리즘
-// 그래프의 최소 가중치 에지를 차례대로 추가하여 MST를 구성합니다.
-// 가장 널리 알려진 시간복잡도는 O(ElogV)입니다.
-// 주로 적은 수의 에지로 최소 그래프(sparse graph)에서 사용됩니다.
-
-// 프림 알고리즘
-// 그래프의 아무 정점부터 시작하여 MST를 구성합니다.
-// 가장 널리 안려진시간 복잡도는 O(E+VlogV)
-// 주로 많은 수의 에지로 구성된 밀집그래프(dense graph)에서 사용 
