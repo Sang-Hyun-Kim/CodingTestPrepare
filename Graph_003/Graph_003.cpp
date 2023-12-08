@@ -102,7 +102,7 @@ ostream& operator<< (ostream& os, const Graph<U>& G)
 template <typename T>
 auto read_graph_from_file()
 {
-    ifstream infile("USA-road-d.NY.gr");
+    ifstream infile("C:\\Users\\Admin\\source\\repos\\CodingTestPrepare\\Graph_003\\USA-road-d.NY.gr");
     if (!infile.is_open()) {
         cout << "Unable to open file." << endl;
         Graph<T> G(0);
