@@ -1,5 +1,5 @@
 ﻿// 백준 2667번 단지 번호 붙이기
-
+// 안씀
 #include <iostream>
 #include <queue>
 #include <vector>
