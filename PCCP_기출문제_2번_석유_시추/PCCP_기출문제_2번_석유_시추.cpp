@@ -38,7 +38,6 @@ int solution(vector<vector<int>> land) {
     int width = land[0].size();
     // 시추 열별 기름 값
     map<int,int> oilGroup;
-    set<int> searchedOilBlock;
     vector<vector<bool>> visited(depth, vector<bool>(width, false));
     // 시추관 순서 순회
     for (int i = 0; i < width; ++i)
@@ -47,11 +46,7 @@ int solution(vector<vector<int>> land) {
         int currentOil = 0;
         for (int j = 0; j < depth; ++j)
         {
-            if (land[j][i] > 0 && !visited[j][i])
-            {
-                //순회
-                BFS(visited, land, i, j, ++group, oilGroup);
-            }
+            if (land[j][i] > 0 && !visited[j][i])  BFS(visited, land, i, j, ++group, oilGroup);
         }
         
     }
