@@ -89,6 +89,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CodeTest20231211Problem002"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PCCP_기출문제_2번_석유_시추", "PCCP_기출문제_2번_석유_시추\PCCP_기출문제_2번_석유_시추.vcxproj", "{F171E14F-CCDA-48D8-999F-13A0D218EAA9}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "2022_KAKAOTECH_INTERNSHIP_등산코스_정하기", "2022_KAKAOTECH INTERNSHIP 등산코스 정하기\2022_KAKAOTECH INTERNSHIP 등산코스 정하기.vcxproj", "{16877F26-82FA-48E3-91D8-B5F651F7C26B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -441,6 +443,14 @@ Global
 		{F171E14F-CCDA-48D8-999F-13A0D218EAA9}.Release|x64.Build.0 = Release|x64
 		{F171E14F-CCDA-48D8-999F-13A0D218EAA9}.Release|x86.ActiveCfg = Release|Win32
 		{F171E14F-CCDA-48D8-999F-13A0D218EAA9}.Release|x86.Build.0 = Release|Win32
+		{16877F26-82FA-48E3-91D8-B5F651F7C26B}.Debug|x64.ActiveCfg = Debug|x64
+		{16877F26-82FA-48E3-91D8-B5F651F7C26B}.Debug|x64.Build.0 = Debug|x64
+		{16877F26-82FA-48E3-91D8-B5F651F7C26B}.Debug|x86.ActiveCfg = Debug|Win32
+		{16877F26-82FA-48E3-91D8-B5F651F7C26B}.Debug|x86.Build.0 = Debug|Win32
+		{16877F26-82FA-48E3-91D8-B5F651F7C26B}.Release|x64.ActiveCfg = Release|x64
+		{16877F26-82FA-48E3-91D8-B5F651F7C26B}.Release|x64.Build.0 = Release|x64
+		{16877F26-82FA-48E3-91D8-B5F651F7C26B}.Release|x86.ActiveCfg = Release|Win32
+		{16877F26-82FA-48E3-91D8-B5F651F7C26B}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
