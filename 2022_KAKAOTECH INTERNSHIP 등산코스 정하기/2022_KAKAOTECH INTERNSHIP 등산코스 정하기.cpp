@@ -8,7 +8,7 @@
 using namespace std;
 
 // { 정점, 해당 정점까지 갈 수 있는 Intensity 중 최소 값}을 저장
-
+// 시간을 줄이기 위해 모든 시작 정점에서 출발 
 struct cmp
 {
     bool operator()(pair<int, int> a, pair<int, int> b)
