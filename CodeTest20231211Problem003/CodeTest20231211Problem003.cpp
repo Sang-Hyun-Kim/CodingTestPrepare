@@ -38,7 +38,6 @@ int main()
                 {
                     dp[j] = j + dp[j - 6];
                 }
-
             }
         }
         cout << dp[num] << endl;

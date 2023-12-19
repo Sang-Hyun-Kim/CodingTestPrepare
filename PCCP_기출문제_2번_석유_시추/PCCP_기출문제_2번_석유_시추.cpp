@@ -112,7 +112,6 @@ int solution(vector<vector<int>> land) {
     vector<int> score; // 순회 점수 기록
     int maxOil=0;
 
-    vector<vector<int>> oil(land.size(),vector<int>(land[0].size(),-1)); // 순회돌때 각 칸에 그룹이 있다면 그 그룹의 기름값 저장, 순회하면서 이미 계산된 기
     int answer = 0;
     
 
