@@ -19,7 +19,20 @@ LL TravelItinerary(int n, vector<int> distance)
 
 	vector<LL> DP(n + 1, 0);
 	vector<LL> sums(n + 2, 0);
+	DP[0] = 1;
 
+	// O(n2)
+	//for (int i = 1; i <= n; i++)
+	//{
+	//	int dist = distance[i - 1];
+	//	for (int j = 1; j <= dist; j++)
+	//	{
+	//		DP[i] = (DP[i] + DP[i - j]) % MOD;
+	//	}
+	//}
+
+	//return DP[n];
+	// O(n)
 	DP[0] = sums[1] = 1;
 
 	for (int i = 1; i <= n; i++)
@@ -33,7 +46,7 @@ LL TravelItinerary(int n, vector<int> distance)
 
 	return (DP[n] < 0) ? DP[n] + MOD : DP[n];
 }
-
+// range(1,4) => sum5 - sum 1 
 vector<int> Generate(int n)
 {
 	vector<int> distance(n);
