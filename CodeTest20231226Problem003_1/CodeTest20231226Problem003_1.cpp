@@ -6,7 +6,7 @@
 // 이때 해당 좌표 i,j에 대해서 왼쪽(j-1), 위(i-1) 그리고 왼쪽 위(i-1,j-1)가 만들 수 있는 사각형의 크기에 따라 결정됨
 // 그러므로 3개의 값 중 "최소" 값에 + 1(자기자신) 을 더한 것이 해당 좌표가 만들 수 있는 "최대" 크기의 정사각형의 "변의 길이" 이다.
 // 수식 DP[i][j] = min(DP[i][j],DP[i][j],DP[i][j])+1 이며
-// 정답은 DP[i][j] * DP[i][j]
+// 정답은 DP[i][j] * DP[i][j] 의 최대 값이다.
 
 #include <iostream>
 #include <vector>
@@ -16,11 +16,10 @@ using namespace std;
 
 int main()
 {
-    //ios::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
+    ios::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
     int row, col;
     cin >> row >> col;
-    vector<vector<int>> board(row+1, vector<int>(col+1, 0));
-    vector<vector<int>> sum(row+1, vector<int>(col+1, 0));
+    vector<vector<int>> board(row + 1, vector<int>(col + 1, 0));
     cin.ignore();
     for (int i = 1; i <= row; ++i)
     {
@@ -28,21 +27,19 @@ int main()
         getline(cin, line);
         for (int j = 1; j <= col; ++j)
         {
-            board[i][j]=line[j - 1] - 48;
-            sum[i][j] = line[j - 1] - 48;
+            board[i][j] = line[j - 1] - 48;
         }
     }
- 
+
     int max = 0;
     for (int i = 0; i <= row; ++i)
     {
         for (int j = 0; j <= col; ++j)
         {
-            if (sum[i][j] == 0) continue;
-            sum[i][j] += min(sum[i - 1][j], min(sum[i - 1][j - 1], sum[i][j - 1]));
-            if (max < sum[i][j]) max = sum[i][j];
+            if (board[i][j] == 0) continue;
+            board[i][j] += min(board[i - 1][j], min(board[i - 1][j - 1], board[i][j - 1]));
+            if (max < board[i][j]) max = board[i][j];
         }
     }
-    cout << max*max << '\n';
+    cout << max * max << '\n';
 }
-
