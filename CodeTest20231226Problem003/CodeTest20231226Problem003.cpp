@@ -2,9 +2,10 @@
 
 #include <iostream>
 #include <vector>
-
+#include <array>
 using namespace std;
-
+array<int, 4> dx = {0,0,-1,1};
+array<int, 4> dy = {-1,1,0,0};
 int DFS(int i, int j, vector<vector<int>>& _map, vector<vector<int>>& _cache);
 int main()
 {
@@ -16,57 +17,32 @@ int main()
 		for (int j = 0; j < colm; ++j)
 			cin >> map[i][j];
 			
-	vector<vector<int>> cache(row, vector<int>(colm, 0));
+	vector<vector<int>> cache(row, vector<int>(colm, -1));
 	int answer = DFS(0, 0, map, cache);
 	cout << answer << '\n';
 }
 
 int DFS(int i, int j, vector<vector<int>>& _map, vector<vector<int>>& _cache)
 {
-	if (i >= _map.size() || j >= _map[0].size()) return 0;
-	if (i == _map.size() - 1 && j == _map[0].size() - 1) return 1;
-	if (_cache[i][j] > 0) return _cache[i][j];
-	else
-	{
-		bool routecheck = false;
-		if (i == _map.size() - 1)
-		{
-			if (_map[i][j] > _map[i][j + 1])
-			{
-				_cache[i][j] += DFS(i, j+1, _map, _cache);
-				routecheck = true;
-			}
-		}
-		else
-		{
-			if (_map[i][j] > _map[i + 1][j])
-			{
-				_cache[i][j] += DFS(i + 1, j, _map, _cache);
-				routecheck = true;
-			}
-		}
 
-		if (j == _map[0].size() - 1)
+	if (i == _map.size() - 1 && j == _map[0].size() - 1) return 1;
+	if (_cache[i][j] != -1) return _cache[i][j];
+
+
+	_cache[i][j] = 0;
+	for (int p = 0; p < 4; ++p)
+	{
+		int nx = i + dx[p];
+		int ny = j + dy[p];
+		if (nx >= 0 && nx < _map.size() && ny >= 0 && ny < _map[0].size())
 		{
-			if (_map[i][j] > _map[i + 1][j])
-			{
-				_cache[i][j] += DFS(i + 1, j, _map, _cache);
-				routecheck = true;
-			}
+			if (_map[i][j] > _map[nx][ny])
+				_cache[i][j] = _cache[i][j] + DFS(nx, ny, _map, _cache);
 		}
-		else
-		{
-			if (_map[i][j] > _map[i][j + 1])
-			{
-				_cache[i][j] += DFS(i, j+1, _map, _cache);
-				routecheck = true;
-			}
-		}
-		
-		if (!routecheck) return 0;
-		else
-		{
-			return _cache[i][j];
-		}
+			
 	}
+		
+		return _cache[i][j];
+		
+
 }
