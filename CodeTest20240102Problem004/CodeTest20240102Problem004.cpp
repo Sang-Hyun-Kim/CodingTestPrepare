@@ -1,5 +1,6 @@
 ﻿// 백준 2533 사회망 서비스
-
+// Caching을 활용한 트리 탐색 문제
+// DP의 성격을 가진것같진않음
 #include <iostream>
 #include <vector>
 #include <climits>
