@@ -41,7 +41,6 @@ int solution(vector<string> friends, vector<string> gifts) {
             continue;
         }
         presents[pairs]++;
-
     }
 
     // 두 사람 사이의 주고 받은 기록 확인
