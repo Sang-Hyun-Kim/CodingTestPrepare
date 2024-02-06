@@ -37,11 +37,7 @@ int main()
                 changecount++;
                 powerBar.push_back(current);
             }
-            else
-            {
-                powerBar.push_back(current);
-            }
-
+            else powerBar.push_back(current);
 
         }
     }
@@ -62,14 +58,9 @@ int Remove_one(int now,vector<int>& _powerBar,vector<int>& _changing) //삭제�
                 break;
             }
         }
-        if (index == -1)
-        {
-            return plug;
-        }
-        else
-        {
-            last = max(last, index);
-        }
+        if (index == -1) return plug;
+        else  last = max(last, index);
+
     }
     return _changing[last];
 }
