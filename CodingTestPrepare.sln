@@ -159,6 +159,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CodeTest20240219Problem001"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CodeTest20240219Problem002", "CodeTest20240219Problem002\CodeTest20240219Problem002.vcxproj", "{A3CABC2E-E0DF-4B6C-B274-ADF702511CDE}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CodeTest20240219Problem003", "CodeTest20240219Problem003\CodeTest20240219Problem003.vcxproj", "{1EEE3087-1D8A-43C6-863A-07D5F65CCBFA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -791,6 +793,14 @@ Global
 		{A3CABC2E-E0DF-4B6C-B274-ADF702511CDE}.Release|x64.Build.0 = Release|x64
 		{A3CABC2E-E0DF-4B6C-B274-ADF702511CDE}.Release|x86.ActiveCfg = Release|Win32
 		{A3CABC2E-E0DF-4B6C-B274-ADF702511CDE}.Release|x86.Build.0 = Release|Win32
+		{1EEE3087-1D8A-43C6-863A-07D5F65CCBFA}.Debug|x64.ActiveCfg = Debug|x64
+		{1EEE3087-1D8A-43C6-863A-07D5F65CCBFA}.Debug|x64.Build.0 = Debug|x64
+		{1EEE3087-1D8A-43C6-863A-07D5F65CCBFA}.Debug|x86.ActiveCfg = Debug|Win32
+		{1EEE3087-1D8A-43C6-863A-07D5F65CCBFA}.Debug|x86.Build.0 = Debug|Win32
+		{1EEE3087-1D8A-43C6-863A-07D5F65CCBFA}.Release|x64.ActiveCfg = Release|x64
+		{1EEE3087-1D8A-43C6-863A-07D5F65CCBFA}.Release|x64.Build.0 = Release|x64
+		{1EEE3087-1D8A-43C6-863A-07D5F65CCBFA}.Release|x86.ActiveCfg = Release|Win32
+		{1EEE3087-1D8A-43C6-863A-07D5F65CCBFA}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
