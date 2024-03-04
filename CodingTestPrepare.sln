@@ -169,6 +169,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CodeTest20240226Problem002"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CodeTest20240226Problem003", "CodeTest20240226Problem003\CodeTest20240226Problem003.vcxproj", "{902FF225-9506-42AE-AB37-1DE8C87CA7BB}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CodeTest20240226Problem004", "CodeTest20240226Problem004\CodeTest20240226Problem004.vcxproj", "{CFC6876D-8780-49BA-9F09-11C889E04738}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -841,6 +843,14 @@ Global
 		{902FF225-9506-42AE-AB37-1DE8C87CA7BB}.Release|x64.Build.0 = Release|x64
 		{902FF225-9506-42AE-AB37-1DE8C87CA7BB}.Release|x86.ActiveCfg = Release|Win32
 		{902FF225-9506-42AE-AB37-1DE8C87CA7BB}.Release|x86.Build.0 = Release|Win32
+		{CFC6876D-8780-49BA-9F09-11C889E04738}.Debug|x64.ActiveCfg = Debug|x64
+		{CFC6876D-8780-49BA-9F09-11C889E04738}.Debug|x64.Build.0 = Debug|x64
+		{CFC6876D-8780-49BA-9F09-11C889E04738}.Debug|x86.ActiveCfg = Debug|Win32
+		{CFC6876D-8780-49BA-9F09-11C889E04738}.Debug|x86.Build.0 = Debug|Win32
+		{CFC6876D-8780-49BA-9F09-11C889E04738}.Release|x64.ActiveCfg = Release|x64
+		{CFC6876D-8780-49BA-9F09-11C889E04738}.Release|x64.Build.0 = Release|x64
+		{CFC6876D-8780-49BA-9F09-11C889E04738}.Release|x86.ActiveCfg = Release|Win32
+		{CFC6876D-8780-49BA-9F09-11C889E04738}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
