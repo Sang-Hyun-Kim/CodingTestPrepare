@@ -187,6 +187,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "2024_KAKAO_WINTER_INTERNSHI
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CodeTest20240325Problem001", "CodeTest20240325Problem001\CodeTest20240325Problem001.vcxproj", "{FC79213B-E0B8-46BE-B08F-D40FE7BF95A6}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CodeTest20240325Problem002", "CodeTest20240325Problem002\CodeTest20240325Problem002.vcxproj", "{5F7E78D8-72FC-4680-9CED-02CCF051537F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -931,6 +933,14 @@ Global
 		{FC79213B-E0B8-46BE-B08F-D40FE7BF95A6}.Release|x64.Build.0 = Release|x64
 		{FC79213B-E0B8-46BE-B08F-D40FE7BF95A6}.Release|x86.ActiveCfg = Release|Win32
 		{FC79213B-E0B8-46BE-B08F-D40FE7BF95A6}.Release|x86.Build.0 = Release|Win32
+		{5F7E78D8-72FC-4680-9CED-02CCF051537F}.Debug|x64.ActiveCfg = Debug|x64
+		{5F7E78D8-72FC-4680-9CED-02CCF051537F}.Debug|x64.Build.0 = Debug|x64
+		{5F7E78D8-72FC-4680-9CED-02CCF051537F}.Debug|x86.ActiveCfg = Debug|Win32
+		{5F7E78D8-72FC-4680-9CED-02CCF051537F}.Debug|x86.Build.0 = Debug|Win32
+		{5F7E78D8-72FC-4680-9CED-02CCF051537F}.Release|x64.ActiveCfg = Release|x64
+		{5F7E78D8-72FC-4680-9CED-02CCF051537F}.Release|x64.Build.0 = Release|x64
+		{5F7E78D8-72FC-4680-9CED-02CCF051537F}.Release|x86.ActiveCfg = Release|Win32
+		{5F7E78D8-72FC-4680-9CED-02CCF051537F}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
