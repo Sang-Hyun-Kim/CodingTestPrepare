@@ -5,7 +5,7 @@
 #include <queue>
 #include <set>
 #include <algorithm>
-#define OUT
+#define OUT // 아무 의미 없고 가독성을 위해 만든 매크로, 해당 함수의 인자로 들어갈때 OUT이 붙어있는 경우엔 함수의 결과로 해당 인자의 값이 변경됨을 명시
 using namespace std;
 int answer = 0;
 int N, M, D;
@@ -26,9 +26,9 @@ struct compare
     }
 };
 bool InRange(int x, int y);
-void Shooting(vector<pair<int, int>> curarchers, OUT vector<vector<int>>& board, int& curenemycnt, int& kp);
-void Move(vector<vector<int>>& board, vector<pair<int, int>>& curarchers, int& curenemycnt);
-void Game(vector<vector<int>>& board);
+void Shooting(vector<pair<int, int>> curarchers, OUT vector<vector<int>>& board, OUT int& curenemycnt, OUT int& kp);
+void Move(OUT vector<vector<int>>& board, OUT vector<pair<int, int>>& curarchers, OUT int& curenemycnt);
+void Game(OUT vector<vector<int>>& board);
 int main()
 {
     ios_base::sync_with_stdio(false);
@@ -57,7 +57,7 @@ bool InRange(int x, int y)
 
 }
 // 궁수의 좌표 인자 3개와 넘겨받은 현재 board 상태를 기준으로 각 궁수의 가장 가까운 적을 찾아 좌표 저장 후 한번에 삭제한 새로운 board 상태를 넘겨주는 함수
-void Shooting(vector<pair<int,int>> curarchers, OUT vector<vector<int>>& board, int& curenemycnt, int& kp)
+void Shooting(vector<pair<int,int>> curarchers, OUT vector<vector<int>>& board, OUT int& curenemycnt, OUT int& kp)
 {
     set<pair<int, int>> targets;
     // 스캔 처리 하기
@@ -115,7 +115,7 @@ void Shooting(vector<pair<int,int>> curarchers, OUT vector<vector<int>>& board, 
 }
 
 // 적이 이동하는 함수, 사실 성이 한칸씩 위로감
-void Move(vector<vector<int>>& board,vector<pair<int,int>>& curarchers, int& curenemycnt)
+void Move(OUT vector<vector<int>>& board, OUT vector<pair<int,int>>& curarchers, OUT int& curenemycnt)
 {
     for (int i = 0; i < 3; ++i)
     {
@@ -132,7 +132,7 @@ void Move(vector<vector<int>>& board,vector<pair<int,int>>& curarchers, int& cur
 }
 
 
-void Game(vector<vector<int>>& board)
+void Game(OUT vector<vector<int>>& board)
 {
     // 궁수의 좌표 3개 결정
     for (int i = 0; i < M - 2; ++i)
