@@ -66,23 +66,6 @@ int main()
 
     // 모든 섬을 잇는 최소 길이를 반환하기
     // 섬은 최소 2개이며 모든 섬은 2부터 시작하여 3에서 7로 끝남
- /*   for (int i = 2; i < 2 + numofislands; ++i)
-    {
-        for (int j = 2; j < 2 + numofislands; ++j)
-        {
-            if (bridges[i][j] != 10000)
-            {
-                vbridges.push_back({ bridges[i][j] ,{i,j} });
-            }
-        }
-    }
-    sort(vbridges.begin(), vbridges.end(), [&](auto& a, auto& b)
-        {
-            if (a.first == b.first)
-                return a.second.first < b.second.first;
-            return a.first < b.first;
-        });*/
-
     Connecting(bridges);
     
 }
