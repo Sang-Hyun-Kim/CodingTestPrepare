@@ -1,4 +1,5 @@
-﻿#include <iostream>
+﻿// 프로그래머스 고득점 Kit 스택/큐 5번 다리를 지나는 트럭
+#include <iostream>
 #include <string>
 #include <vector>
 #include <algorithm>
@@ -61,6 +62,6 @@ int solution(int bridge_length, int weight, vector<int> truck_weights) {
 
 int main()
 {
-    int answer = solution(2, 10, {7,4,5,6});
+    int answer = solution(2, 10, { 7,4,5,6 });
     cout << answer;
 }
