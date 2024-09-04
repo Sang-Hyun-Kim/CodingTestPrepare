@@ -30,5 +30,6 @@ int solution(vector<int> citations) {
 
 int main()
 {
-
+    int answer = solution({ 3, 0, 6, 1, 5 });
+    cout << answer;
 }
