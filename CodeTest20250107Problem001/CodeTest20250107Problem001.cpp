@@ -1,6 +1,5 @@
 ﻿#include <string>
 #include <vector>
-#include <cmath>
 #include <unordered_set>
 #include <array>
 #include <algorithm>
@@ -61,8 +60,6 @@ vector<int> solution(int rows, int columns, vector<vector<int>> queries) {
 
 void Rotator(int xs, int ys, int xd, int yd, vector<vector<int>>& board)
 {
-    int xln = (int)abs(xd - xs) + 1;
-    int yln = (int)abs(yd - ys) + 1;
     // 시계방향 x1,y1 기준 조건에 따라항상 왼쪽 위인 xs ys
     int mini = 10000001;
 
